@@ -8,7 +8,7 @@ app.listen(constants.PORT, () => {
 ENVIRONMENT : ${constants.NODE_ENVIRONMENT} 
 PORT        : ${constants.PORT}
 URL         : ${constants}
-  `);
+`);
 });
 
 app.get("/", (req, res) => res.send(`Sercver is running on port: ${constants.PORT}`));
