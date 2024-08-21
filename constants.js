@@ -2,8 +2,6 @@ require("dotenv").config({
   path: "./.env.local",
 });
 
-console.log("hello env : ",process.env.NODE_ENVIRONMENT);
-
 module.exports = {
   NODE_ENVIRONMENT: process.env.NODE_ENVIRONMENT,
   PORT: process.env.PORT,
@@ -11,5 +9,6 @@ module.exports = {
   SERVER_URL: process.env.SERVER_URL,
 
   //   Database
+  DB_NAME: process.env.DB_NAME,
   MONGODB_URI: process.env.MONGODB_URI,
 };
