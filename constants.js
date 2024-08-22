@@ -11,4 +11,5 @@ module.exports = {
   //   Database
   DB_NAME: process.env.DB_NAME,
   MONGODB_URI: process.env.MONGODB_URI,
+  PG_URI: process.env.PG_URI,
 };

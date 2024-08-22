@@ -5,9 +5,9 @@ const mongoDB = async () => {
   try {
     const connectionInstance = await connect(`${MONGODB_URI}/${DB_NAME}`)
 
-    console.log('+++ Database connected +++')
+    console.log('+++ MongoDb connected +++')
   } catch (err) {
-    console.error('+++ Database connection failed +++')
+    console.error('+++ MongoDb connection failed +++')
     console.warn(`Error in MongoDB connection: ${err.message}`)
     process.exit(1)
   }
