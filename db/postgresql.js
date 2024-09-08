@@ -1,22 +1,51 @@
-const { Sequelize } = require('sequelize');
-const { PG_URI } = require('../constants');
+const { Pool } = require("pg");
+const {
+  PG_DBNAME,
+  PG_PORT,
+  PG_USERNAME,
+  PG_PASSWORD,
+  PG_HOSTNAME,
+} = require("../constants");
 
-const sequelize = new Sequelize(PG_URI, {
-  dialect: 'postgres',
-  logging: false,
+const pool = new Pool({
+  user: PG_USERNAME,
+  host: PG_HOSTNAME,
+  database: PG_DBNAME,
+  password: PG_PASSWORD,
+  port: PG_PORT,
 });
 
-const connectDB = async () => {
+// Function to test and ensure the connection is established
+const connectPostgres = async () => {
   try {
-    await sequelize.authenticate();
-    console.log('+++ Postgres connected +++');
+    // Check connection by querying the database
+    await pool.query("SELECT 1");
+    console.log("+++ PostgreSQL connected +++");
   } catch (err) {
-    console.error('+++ Postgres connection failed +++');
+    console.error("+++ PostgreSQL connection failed +++");
     console.warn(`Error in PostgreSQL connection: ${err.message}`);
-    process.exit(1);
   }
 };
 
-connectDB();
+connectPostgres();
 
-module.exports = sequelize;
+const testQueries = async () => {
+  try {
+    // Check connection by querying the database
+    let data = await pool.query(`
+select *
+from INFORMATION_SCHEMA.COLUMNS
+where TABLE_NAME='xps'
+      `);
+
+    console.log("Dtaa : ", data.rows);
+    console.log("+++ PostgreSQL connected +++");
+  } catch (err) {
+    console.error("+++ PostgreSQL connection failed +++");
+    console.warn(`Error in PostgreSQL connection: ${err.message}`);
+  }
+};
+
+// testQueries();
+
+module.exports = pool;
