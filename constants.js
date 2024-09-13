@@ -23,4 +23,7 @@ module.exports = {
   PG_USERNAME: process.env.PG_USERNAME,
   PG_PASSWORD: process.env.PG_PASSWORD,
   PG_PORT: process.env.PG_PORT,
+
+  //   Crons
+  CRON_SECRET: process.env.CRON_SECRET,
 };

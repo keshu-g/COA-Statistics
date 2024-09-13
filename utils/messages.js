@@ -28,7 +28,7 @@ module.exports = {
   INVALID_AUTH: [400, "Invalid Email or Password"],
   INVALID: [400, "Invalid :item."],
   UNAUTHORIZED: [401, ":item is unauthorized. Please login again."],
-  FORBIDDEN: [403, ":item does not have access."],
+  FORBIDDEN: [403, "Not today.."],
   NOT_FOUND: [404, ":item not found."],
 
   SERVER_ERROR: [500, "Something went wrong. Please try again later."],

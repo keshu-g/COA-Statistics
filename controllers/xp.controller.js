@@ -11,7 +11,8 @@ const getXp = async (req, res) => {
   try {
     let data = {
       "name": "keshu",
-      "bio": "no xp for you haha"
+      "bio": "no xp for you haha",
+      "version" : "0.0.1"
     }
     // await xpGenerator()
     return messageResponse(MESSAGE.SUCCESS, "xps", data, res);
@@ -20,19 +21,16 @@ const getXp = async (req, res) => {
     return messageResponse(MESSAGE.SERVER_ERROR, null, null, res);
   }
 };
-
-const emailTest = async () => {
+const grindXp = async (req, res) => {
   try {
-    let data = await sendEmail(
-      "kartikgoswami083@gmail.com",
-      "testing subject",
-      "this is a test email"
-    );
-    console.log(data);
+    console.log("wtf it is working...")
+    await xpGenerator()
+    return messageResponse(MESSAGE.ADD_SUCCESS, "xps", null, res);
   } catch (error) {
-    console.error("+++ Email testing failed +++");
-    console.warn(`Error in email testing: ${error.message}`);
+    console.log(error.message);
+    return messageResponse(MESSAGE.SERVER_ERROR, null, null, res);jh
   }
 };
 
-module.exports = { getXp, emailTest };
+
+module.exports = { getXp, grindXp };

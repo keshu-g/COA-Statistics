@@ -1,8 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { getXp, emailTest } = require('../controllers/xp.controller'); // Importing the getXp function
+const { getXp, grindXp } = require("../controllers/xp.controller");
+const auth = require("../middlewares/cronAuth");
 
-router.get('/xp', getXp);
+router.get("/xp", getXp);
+router.get("/grindXp", auth, grindXp);
 // router.get('/email', emailTest);
 
 module.exports = router;
