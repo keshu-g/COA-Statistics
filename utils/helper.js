@@ -110,7 +110,7 @@ const xpGenerator = async () => {
   );
 
   // Loop through 500 pages and collect the data
-  let pageLimit = 1;
+  let pageLimit = 499;
   for (let page = 0; page <= pageLimit; page++) {
     console.log(`Fetching data from page ${page}`);
     const pageData = await fetchXpData(page);
