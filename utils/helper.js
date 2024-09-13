@@ -8,6 +8,7 @@ const path = require("path");
 const fs = require("fs");
 const { sendEmail } = require("./emailHelper");
 const pool = require("../db/postgresql");
+const axios = require("axios");
 
 const isEmpty = (value) =>
   value === null ||
@@ -109,7 +110,8 @@ const xpGenerator = async () => {
   );
 
   // Loop through 500 pages and collect the data
-  for (let page = 0; page <= 499; page++) {
+  let pageLimit = 1;
+  for (let page = 0; page <= pageLimit; page++) {
     console.log(`Fetching data from page ${page}`);
     const pageData = await fetchXpData(page);
     allData = allData.concat(pageData);
