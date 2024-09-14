@@ -1,7 +1,7 @@
 const express = require("express");
 const constants = require("./constants");
 const app = require("./app");
-const pg = require("./db/postgresql");
+const pool = require("./db/postgresql");
 
 app.listen(constants.PORT, () => {
   console.log(`

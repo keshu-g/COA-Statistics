@@ -11,6 +11,11 @@
             }
         }
     ],
+    "functions": {
+        "/api/grindXp": {
+            "maxDuration": 60
+        }
+    },
     "routes": [
         {
             "src": "/(.*)",

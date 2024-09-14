@@ -148,7 +148,7 @@ const xpGenerator = async () => {
   try {
     await client.query("BEGIN");
 
-    const batchSize = 500;
+    const batchSize = 1000;
     for (let i = 0; i < transformedData.length; i += batchSize) {
       console.log(
         `Batch ${i / batchSize + 1} of ${Math.ceil(
