@@ -17,12 +17,16 @@ body {
     background: #111;
     color: #fff;
     font-family: 'COAfont', serif;
+    padding: 0 20px; /* Add padding to prevent content from touching the edges */
 }
 
 .container {
     text-align: center;
     position: relative;
     transform: translateY(-15%);
+    max-width: 1000px; /* Set max width for larger screens */
+    width: 100%;
+    padding: 0 20px; /* Add padding inside the container */
 }
 
 .logo {
@@ -56,4 +60,28 @@ p {
 
 .button:hover {
     background-color: #666;
+}
+
+/* Mobile Responsive Design */
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 0 10px; /* Less padding for mobile */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Adjust the font size for mobile */
+    }
+
+    p {
+        font-size: 1.25rem; /* Adjust the paragraph font size */
+    }
+
+    .logo {
+        width: 200px; /* Reduce logo size on mobile */
+    }
+
+    .button {
+        padding: 10px 30px; /* Slightly reduce button size for mobile */
+        font-size: 1.2rem;
+    }
 }
