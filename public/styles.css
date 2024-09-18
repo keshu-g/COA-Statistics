@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "COAfont";
+    src: url('./assets/fonts/font.woff2') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    color: #fff;
+    font-family: 'COAfont', serif;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    transform: translateY(-15%);
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #d4af37;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #bbb;
+}
+
+.button {
+    padding: 15px 40px;
+    font-size: 1.75rem;
+    background-color: #444;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.button:hover {
+    background-color: #666;
+}

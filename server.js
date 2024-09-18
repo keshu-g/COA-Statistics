@@ -3,12 +3,17 @@ const constants = require("./constants");
 const app = require("./app");
 const pool = require("./db/postgresql");
 
-app.listen(constants.PORT, () => {
-  console.log(`
+let serverURL = constants.NODE_ENVIRONMENT === "production" ? constants.SERVER_URL : `http://localhost:${constants.PORT}`;
+
+let logString = `
 +++ Server Started +++
 ENVIRONMENT : ${constants.NODE_ENVIRONMENT} 
 PORT        : ${constants.PORT}
-URL         : ${constants.SERVER_URL}:${constants.PORT}`);
+URL         : ${serverURL}
+`
+
+app.listen(constants.PORT, () => {
+  console.log(logString);
 });
 
 app.get("/", (req, res) =>
