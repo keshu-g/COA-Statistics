@@ -27,7 +27,6 @@ const getXp = async (req, res) => {
 };
 const grindXp = async (req, res) => {
   try {
-    console.log("wtf it is working...")
     await xpGenerator()
     return messageResponse(MESSAGE.ADD_SUCCESS, "xps", null, res);
   } catch (error) {

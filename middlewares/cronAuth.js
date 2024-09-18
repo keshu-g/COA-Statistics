@@ -1,4 +1,3 @@
-// add a middleware for vercel cron job
 const constants = require("../constants");
 const { messageResponse } = require("../utils/apiHelper");
 const MESSAGE = require("../utils/messages");
